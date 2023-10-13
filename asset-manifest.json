@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/RAILWAY-React/static/css/main.8a3704c6.css",
+    "main.js": "/RAILWAY-React/static/js/main.116069ad.js",
+    "static/media/background.jpeg": "/RAILWAY-React/static/media/background.7a009281bf4780af38da.jpeg",
+    "index.html": "/RAILWAY-React/index.html",
+    "main.8a3704c6.css.map": "/RAILWAY-React/static/css/main.8a3704c6.css.map",
+    "main.116069ad.js.map": "/RAILWAY-React/static/js/main.116069ad.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8a3704c6.css",
+    "static/js/main.116069ad.js"
+  ]
+}
