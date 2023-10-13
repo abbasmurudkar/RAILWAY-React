@@ -4,7 +4,7 @@ import Railway from "@mui/icons-material/DirectionsRailway";
 import LocationIcon from '@rsuite/icons/Location';
 import "rsuite/dist/rsuite.min.css";
 import { Button, DateRangePicker, Dropdown, Form, InputGroup, InputNumber } from "rsuite";
-import Background from "../ASSETS/background.jpeg";
+import Background from "../../ASSETS/background.jpeg";
 import NavbarBrand from "rsuite/esm/Navbar/NavbarBrand";
 import { Link } from "react-router-dom";
 import subDays from 'date-fns/subDays';
@@ -153,6 +153,8 @@ const Continer = styled.div`
   background-repeat: no-repeat;
   width: 100%;
   height: 750px;
+  border-bottom: 4px solid red;
+  background-attachment: fixed;
 `;
 const TextContainer = styled.div`
   width: 100%;
@@ -189,6 +191,7 @@ const TextContainer = styled.div`
     justify-content: center;
     align-items: center;
     position: relative;
+    z-index: 1;
     .form {
       display: block;
       width: 70%;
@@ -230,7 +233,7 @@ const NavigationLinks = styled.div`
 const Navs = styled.div`
   width: 100%;
   position: fixed;
-  z-index: 1;
+  z-index: 2;
   display: flex;
   justify-content: space-between;
   align-items: center;

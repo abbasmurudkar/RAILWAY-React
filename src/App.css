@@ -7,3 +7,6 @@
     font-size: 16px;
 
 }
+.content-1:hover img{
+    transform: scale(0.9);
+}
