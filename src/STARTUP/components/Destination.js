@@ -18,6 +18,7 @@ const Destination = () => {
       LocatedIn: "Uttar Pradesh",
       Rupees: "700"
     },
+    
     {
       Img: Redfort,
       Location: "REDFORT",

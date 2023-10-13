@@ -10,3 +10,6 @@
 .content-1:hover img{
     transform: scale(0.9);
 }
+.containers-1:hover img{
+    transform: scale(1.1);
+}

@@ -153,7 +153,6 @@ const Continer = styled.div`
   background-repeat: no-repeat;
   width: 100%;
   height: 750px;
-  border-bottom: 4px solid red;
   background-attachment: fixed;
 `;
 const TextContainer = styled.div`
