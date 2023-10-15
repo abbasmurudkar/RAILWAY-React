@@ -1,26 +1,29 @@
 {
   "files": {
     "main.css": "/RAILWAY-React/static/css/main.000b7b59.css",
-    "main.js": "/RAILWAY-React/static/js/main.60a949b4.js",
+    "main.js": "/RAILWAY-React/static/js/main.5f4b78ae.js",
+    "static/media/loginbackground.jpeg": "/RAILWAY-React/static/media/loginbackground.24f3ab5f62937b8946c5.jpeg",
     "static/media/Redfort.webp": "/RAILWAY-React/static/media/Redfort.8c6f681f5cceb5f0094b.webp",
     "static/media/taj-mahal.webp": "/RAILWAY-React/static/media/taj-mahal.e62c6b021948d43f5f7e.webp",
     "static/media/background.jpeg": "/RAILWAY-React/static/media/background.7a009281bf4780af38da.jpeg",
     "static/media/tracks.webp": "/RAILWAY-React/static/media/tracks.f66df65f872f879b5cc3.webp",
+    "static/media/error.png": "/RAILWAY-React/static/media/error.ec9e3a62916d44dd9810.png",
     "static/media/udaipur.jpeg": "/RAILWAY-React/static/media/udaipur.7d9b36dd2c612e85e891.jpeg",
     "static/media/ladhak.jpeg": "/RAILWAY-React/static/media/ladhak.ce02e92c75339ccf12d6.jpeg",
     "static/media/manali.jpeg": "/RAILWAY-React/static/media/manali.7307964c538fee76a05a.jpeg",
     "static/media/Baghabeach.jpeg": "/RAILWAY-React/static/media/Baghabeach.adf74aea875ff680d66b.jpeg",
     "static/media/avtar2.jpg": "/RAILWAY-React/static/media/avtar2.c93b7d1c34564faa2388.jpg",
+    "static/media/AboutRailway.jpeg": "/RAILWAY-React/static/media/AboutRailway.c0def2d4947bfb37eb80.jpeg",
     "static/media/Features3.png": "/RAILWAY-React/static/media/Features3.1513b14b6e91aa5fd70f.png",
     "static/media/Features2.png": "/RAILWAY-React/static/media/Features2.682abaf7347dbd521920.png",
     "static/media/avtar1.jpg": "/RAILWAY-React/static/media/avtar1.7b52593b646b3ceb3763.jpg",
     "static/media/Features1.png": "/RAILWAY-React/static/media/Features1.5771c62bbc6d2acde917.png",
     "index.html": "/RAILWAY-React/index.html",
     "main.000b7b59.css.map": "/RAILWAY-React/static/css/main.000b7b59.css.map",
-    "main.60a949b4.js.map": "/RAILWAY-React/static/js/main.60a949b4.js.map"
+    "main.5f4b78ae.js.map": "/RAILWAY-React/static/js/main.5f4b78ae.js.map"
   },
   "entrypoints": [
     "static/css/main.000b7b59.css",
-    "static/js/main.60a949b4.js"
+    "static/js/main.5f4b78ae.js"
   ]
 }
