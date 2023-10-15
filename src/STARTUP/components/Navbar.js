@@ -1,14 +1,15 @@
 import React from "react";
 import styled from "styled-components";
-import Railway from "@mui/icons-material/DirectionsRailway";
+
 import LocationIcon from '@rsuite/icons/Location';
 import "rsuite/dist/rsuite.min.css";
 import { Button, DateRangePicker, Dropdown, Form, InputGroup, InputNumber } from "rsuite";
 import Background from "../../ASSETS/background.jpeg";
 import NavbarBrand from "rsuite/esm/Navbar/NavbarBrand";
-import { Link } from "react-router-dom";
+
 import subDays from 'date-fns/subDays';
-const Navbar = () => {
+import Nav from "./Nav";
+const Navbar = (props) => {
   const ranges = [
     {
       label: 'today',
@@ -19,66 +20,17 @@ const Navbar = () => {
       value: [subDays(new Date(), 1), subDays(new Date(), 1)]
     }
   ];
-  const navigations = [
-    {
-      Item: "Home",
-      Link: "#",
-    },
-    {
-      Item: "About",
-      Link: "#",
-    },
-    {
-      Item: "Blog",
-      link: "#",
-    },
-    {
-      Item: "Gallery",
-      link: "#",
-    },
-  ];
+ 
   return (
     <Continer>
-      <Navs>
-        <div className="logo">
-          <Railway className="rail-logo" />
-          <h4>TrainWhisper</h4>
-        </div>
-        <NavigationLinks>
-          <div className="links">
-            {navigations.map((item, key) => {
-              return (
-                <Link
-                  to={item.link}
-                  key={key}
-                  style={{ color: "white", textDecoration: "none" }}
-                >
-                  <p>{item.Item}</p>
-                </Link>
-              );
-            })}
-          </div>
-        </NavigationLinks>
-        <div className="buttons">
-          <Button size="md" color="green" appearance="primary" className="btn">
-            Sign In
-          </Button>
-          <Button color="green" size="md" appearance="primary" className="btn">
-            Register
-          </Button>
-        </div>
-      </Navs>
+      <Nav/>
       <TextContainer>
         <div className="text-part">
           <h1 className="head">
             WELCOME TO
             <br />
             BOOK{" "}
-            <span
-              style={{ fontWeight: "100", fontSize: "60px", color: "#4caf50" }}
-            >
-              YOUR
-            </span>{" "}
+            <span style={{  fontSize: "60px"}}>YOUR</span>{" "}
             TRAIN
           </h1>
           <p>
@@ -209,58 +161,6 @@ const TextContainer = styled.div`
           width: 200px ;
         }
       }
-    }
-  }
-`;
-const NavigationLinks = styled.div`
-  .links {
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    p {
-      margin-right: 50px;
-      font-size: 18px;
-      margin-left: 50px;
-    }
-    p + p {
-      margin: 0;
-    }
-  }
-`;
-const Navs = styled.div`
-  width: 100%;
-  position: fixed;
-  z-index: 2;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: black;
-  color: white;
-  height: 80px;
-  .logo {
-    width: 220px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    .rail-logo {
-      font-size: 30px;
-      margin-right: 4px;
-    }
-    h2 {
-      margin: 2px;
-    }
-  }
-  .buttons {
-    width: 220px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 50px;
-    .btn {
-      margin-left: 10px;
-      margin-right: 10px;
     }
   }
 `;
