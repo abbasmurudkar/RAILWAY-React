@@ -5,7 +5,6 @@ import LocationIcon from '@rsuite/icons/Location';
 import "rsuite/dist/rsuite.min.css";
 import { Button, DateRangePicker, Dropdown, Form, InputGroup, InputNumber } from "rsuite";
 import Background from "../../ASSETS/background.jpeg";
-import NavbarBrand from "rsuite/esm/Navbar/NavbarBrand";
 
 import subDays from 'date-fns/subDays';
 import Nav from "./Nav";

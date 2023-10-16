@@ -13,6 +13,7 @@ const Error = () => {
     </div>
     <Container>
       <div className='headers'>
+        
         <img src={Errors} alt='Loading'/>
       </div>
      <div className='paragraph'>
@@ -44,7 +45,6 @@ height: 100vh;
         font-size: 35px;
     }
 }
-
 `;
 const Container = styled.div`
 height: 90%;
