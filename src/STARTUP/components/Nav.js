@@ -15,7 +15,7 @@ const Nav = () => {
     },
     {
       Item: "Blog",
-      Link: "/Blog",
+      Link: "#",
     },
   ];
   return (
@@ -45,7 +45,7 @@ const Nav = () => {
           </Dropdown>
         </div>
       </NavigationLinks>
-      {/* <div className="buttons">
+      <div className="buttons">
         <Link to="/SignIn">
           <Button size="md" color="green" appearance="primary" className="btn">
             Sign In
@@ -56,7 +56,7 @@ const Nav = () => {
             Register
           </Button>
         </Link>
-      </div> */}
+      </div>
     </Navs>
   );
 };
