@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/RAILWAY-React/static/css/main.000b7b59.css",
-    "main.js": "/RAILWAY-React/static/js/main.58b2a422.js",
+    "main.js": "/RAILWAY-React/static/js/main.1eaf5940.js",
     "static/media/loginbackground.jpeg": "/RAILWAY-React/static/media/loginbackground.24f3ab5f62937b8946c5.jpeg",
     "static/media/Redfort.webp": "/RAILWAY-React/static/media/Redfort.8c6f681f5cceb5f0094b.webp",
     "static/media/taj-mahal.webp": "/RAILWAY-React/static/media/taj-mahal.e62c6b021948d43f5f7e.webp",
@@ -20,10 +20,10 @@
     "static/media/Features1.png": "/RAILWAY-React/static/media/Features1.5771c62bbc6d2acde917.png",
     "index.html": "/RAILWAY-React/index.html",
     "main.000b7b59.css.map": "/RAILWAY-React/static/css/main.000b7b59.css.map",
-    "main.58b2a422.js.map": "/RAILWAY-React/static/js/main.58b2a422.js.map"
+    "main.1eaf5940.js.map": "/RAILWAY-React/static/js/main.1eaf5940.js.map"
   },
   "entrypoints": [
     "static/css/main.000b7b59.css",
-    "static/js/main.58b2a422.js"
+    "static/js/main.1eaf5940.js"
   ]
 }
