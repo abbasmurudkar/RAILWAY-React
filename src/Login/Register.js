@@ -5,14 +5,15 @@ import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
 import MailIcon from '@mui/icons-material/Mail';
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
-import { Link } from 'react-router-dom';
+import { Link,useNavigate } from 'react-router-dom';
 import { MainContainer } from './Login';
-const Register = () => {
-    const [Users, OnuserChange] = useState("")
+import { auth } from '../misc/Firebase';
+
+const Register = ({Users,OnusernameChange}) => {
     const [Password, setPassword] = useState("")
     const [Email, setEmail] = useState(" ")
     const [show_hide, setshow_hide] = useState(false)
-  
+    const history = useNavigate();
     const OnpasswordChange = (value) => {
       setPassword(value)
     }
@@ -22,8 +23,20 @@ const Register = () => {
     const Show_Hide = () => {
       setshow_hide(!show_hide)
     }
-    const onuser = (value)=>{
-        OnuserChange(value)
+
+    const OnRegister = async (e) =>{
+      e.preventDefault();
+      try{
+        await auth.createUserWithEmailAndPassword(Email,Password).then((auth)=>{
+          if(auth){
+            history('/SignIn')
+          }
+        })
+        alert("REGISTER SUCCESSFULL PROCEED TO LOGIN")
+      }
+      catch(err){
+        alert(err.message)
+      }
     }
   return (
     <Registration>
@@ -40,7 +53,7 @@ const Register = () => {
                   <div className='Input-Group' style={{margin:"3px"}}>
                     <label htmlFor='User-Name'>NAME:</label>
                     <InputGroup >
-                      <Input type='text' value={Users} onChange={onuser} id="User-Name" />
+                      <Input type='text' value={Users} onChange={OnusernameChange} id="User-Name" />
                       <InputGroup.Addon>
                         <PersonOutlineIcon/>
                       </InputGroup.Addon>
@@ -73,6 +86,7 @@ const Register = () => {
                   size="lg"
                   color="green"
                   appearance="primary"
+                  onClick={OnRegister}
                 >Register</Button>
                 </div>
                 <div >

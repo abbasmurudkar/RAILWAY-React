@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { Button, Col, Grid, Input, InputGroup, Panel, Row } from "rsuite";
+import { Button, Col, Grid, Input, InputGroup, Notification, Panel, Placeholder, Row } from "rsuite";
 import styled from "styled-components";
 import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
 import VisibilityIcon from "@mui/icons-material/Visibility";
@@ -9,7 +9,9 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import GoogleIcon from "@mui/icons-material/Google";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LoginBackground from "../ASSETS/loginbackground.jpeg"
-const Login = () => {
+import { auth, database } from "../misc/Firebase";
+import firebase from "firebase/app";
+const Login = ({Users}) => {
   const [Email, setEmail] = useState("");
   const [Password, setPassword] = useState("");
   const [show_hide, setshow_hide] = useState(false);
@@ -23,6 +25,57 @@ const Login = () => {
   const Show_Hide = () => {
     setshow_hide(!show_hide);
   };
+
+  const SignInWithProvider = async (Provider)=>{
+    try{
+      const {additionalUserInfo,user} = await auth.signInWithPopup(Provider);
+      if (additionalUserInfo.isNewUser) {
+        await database.ref(`/profiles/${user.uid}`).set({
+            Name: user.displayName,
+            CreatedAt: firebase.database.ServerValue.TIMESTAMP,
+            Provider: additionalUserInfo.providerId,
+            Avatar: user.photoURL
+        })}
+        <Notification type="success" header="success">
+      SUCCESSFULLY LOGGED IN
+    </Notification> 
+    }
+    catch(err){
+<Notification type="error" header="error">
+      {err.message}
+    </Notification> 
+    }
+  }
+  const OnFacebookSignIn = ()=>{
+    SignInWithProvider(new firebase.auth.FacebookAuthProvider())
+  }
+  const OnGithubSignIn = () =>{
+    SignInWithProvider(new firebase.auth.GithubAuthProvider())
+  }
+  const OnGoogleSignIn = () =>{
+    SignInWithProvider(new firebase.auth.GoogleAuthProvider())
+  }
+
+  const OnSignIN = async (e) => {
+    e.preventDefault()
+    try{
+      const {additionalUserInfo,user} =  await auth.signInWithEmailAndPassword(Email,Password);
+      if (additionalUserInfo.isNewUser === false) {
+        await database.ref(`/profiles/${user.uid}`).set({
+            Name: Users,
+            Email: user.email,
+            CreatedAt: firebase.database.ServerValue.TIMESTAMP,
+            Provider: additionalUserInfo.providerId,
+        })
+    }
+      alert("REGISTER SUCCESSFULL PROCEED TO LOGIN")
+    }
+    catch(err){
+      alert(err.message)
+    }
+}
+
+
   return (
     <MainContainer>
       <Grid >
@@ -68,6 +121,7 @@ const Login = () => {
                     margin:"20px 5px 0px 5px"
                   }}
                   type="submit"
+                  onClick={OnSignIN}
                   size="lg"
                   color="green"
                   appearance="primary"
@@ -77,13 +131,13 @@ const Login = () => {
                 <p className="sign-with">Sign up with</p>
               </div>
               <div style={{margin:"3px"}}>
-                <Button block type="submit" size="lg" color="blue" appearance="primary" required>
+                <Button block type="submit" size="lg" color="blue" appearance="primary" onClick={OnFacebookSignIn}>
                   <FacebookIcon style={{position:"absolute",left:"15px"}}/> Login with Facebook
                 </Button>
-                <Button className="google" block type="submit" size="lg" color="red" appearance="primary">
+                <Button className="google" block type="submit" size="lg" color="red" appearance="primary" onClick={OnGoogleSignIn}>
                   <GoogleIcon style={{position:"absolute",left:"15px"}} /> Login with Google
                 </Button>
-                <Button className="github" block size="lg" type="submit" >
+                <Button className="github" block size="lg" type="submit" onClick={OnGithubSignIn}>
                   <GitHubIcon style={{position:"absolute",left:"15px"}} /> Login with Github
                 </Button>
                 <p style={{textAlign:"center",marginTop:"30px"}}>

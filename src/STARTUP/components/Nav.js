@@ -1,62 +1,67 @@
-import React, { useRef } from 'react'
-import styled from 'styled-components';
+import React, { useRef } from "react";
+import styled from "styled-components";
 import Railway from "@mui/icons-material/DirectionsRailway";
 import { Link } from "react-router-dom";
-import { Button } from 'rsuite';
+import { Button, Dropdown } from "rsuite";
 const Nav = () => {
-    
-    const navigations = [
-        {
-          Item: "Home",
-          Link: "/",
-        },
-        {
-          Item: "About",
-          Link: "/About",
-        },
-        {
-          Item: "Blog",
-          Link: "/Blog",
-        },
-        {
-          Item: "Gallery",
-          Link: "#",
-        },
-      ];
+  const navigations = [
+    {
+      Item: "Home",
+      Link: "/",
+    },
+    {
+      Item: "About",
+      Link: "/About",
+    },
+    {
+      Item: "Blog",
+      Link: "/Blog",
+    },
+  ];
   return (
     <Navs>
-    <div className="logo">
-      <Railway className="rail-logo" />
-      <h4>TrainWhisper</h4>
-    </div>
-    <NavigationLinks>
-      <div className="links">
-        {navigations.map((item, key) => {
-          return (
-            <Link
-              to={item.Link}
-              key={key}
-              style={{ color: "white", textDecoration: "none" }}
-            >
-              <p>{item.Item}</p>
-            </Link>
-          );
-        })}
+      <div className="logo">
+        <Railway className="rail-logo" />
+        <h4>TrainWhisper</h4>
       </div>
-    </NavigationLinks>
-    <div className="buttons">
-      <Link to="/SignIn"><Button size="md" color="green" appearance="primary" className="btn">
-        Sign In
-      </Button></Link>
-      <Link to="/Register"><Button color="green" size="md" appearance="primary" className="btn">
-        Register
-      </Button></Link>
-    </div>
-  </Navs>
-  )
-}
+      <NavigationLinks>
+        <div className="links">
+          {navigations.map((item, key) => {
+            return (
+              <Link
+                to={item.Link}
+                key={key}
+                style={{ color: "white", textDecoration: "none" }}
+              >
+                <p>{item.Item}</p>
+              </Link>
+            );
+          })}
+          <Dropdown title="Pages">
+            <Dropdown.Item>User Settings</Dropdown.Item>
+            <Dropdown.Item>Shortcuts</Dropdown.Item>
+            <Link to="/About"><Dropdown.Item>About Us</Dropdown.Item></Link>
+            <Link to="/SearchTickets"><Dropdown.Item>Search Tickets</Dropdown.Item></Link>
+          </Dropdown>
+        </div>
+      </NavigationLinks>
+      {/* <div className="buttons">
+        <Link to="/SignIn">
+          <Button size="md" color="green" appearance="primary" className="btn">
+            Sign In
+          </Button>
+        </Link>
+        <Link to="/Register">
+          <Button color="green" size="md" appearance="primary" className="btn">
+            Register
+          </Button>
+        </Link>
+      </div> */}
+    </Navs>
+  );
+};
 
-export default Nav
+export default Nav;
 
 const NavigationLinks = styled.div`
   .links {
@@ -65,6 +70,16 @@ const NavigationLinks = styled.div`
     justify-content: center;
     align-items: center;
     text-align: center;
+    margin-right: 90px;
+    button {
+      background-color: black;
+      color: white;
+      font-size: 18px;
+      margin-left: 30px;
+    }
+    a{
+      text-decoration:none;
+    }
     p {
       margin-right: 50px;
       font-size: 18px;
@@ -98,6 +113,7 @@ const Navs = styled.div`
       margin: 2px;
     }
   }
+
   .buttons {
     width: 220px;
     display: flex;
@@ -110,4 +126,3 @@ const Navs = styled.div`
     }
   }
 `;
-
